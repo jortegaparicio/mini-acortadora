@@ -38,6 +38,7 @@ if sys.argv[1] == '--local':
     dir = '.'
     github_file_list = os.listdir(dir)
 else:
+    aleatorio = str(int(random.random() * 1000000))
     dir = '/tmp/' + aleatorio
     repo_git = "http://gitlab.etsit.urjc.es/" + sys.argv[1] + "/" + ejercicio
 
@@ -54,7 +55,6 @@ else:
         sys.exit()
 
 error = 0
-
 
 if (len(github_file_list) < min_files) or (len(github_file_list) > max_files):
     error = 1
